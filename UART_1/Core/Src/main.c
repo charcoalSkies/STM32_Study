@@ -96,12 +96,12 @@ int main(void)
   uint8_t a = 'a';
   while (1)
   {
-//	  HAL_UART_Transmit(&huart3, a, 1, 10); // a변수의 데이터 1바이트를 UART 3번 채널로 송신 (10ms 안에 응답 하지 않으면 연결 끊음)
+//	  HAL_UART_Transmit(&huart3, a, 1, 10); // a�??��?�� ?��?��?�� 1바이?���? UART 3�? 채널�? ?��?�� (10ms ?��?�� ?��?�� ?���? ?��?���? ?���? ?��?��)
 //	  HAL_Delay(1000);
 
 	  if(HAL_UART_Receive(&huart3, &a, 1, 10) == HAL_OK)
 	  {
-		  HAL_UART_Transmit(&huart3, &a, 1, 10); // a변수의 데이터 1바이트를 UART 3번 채널로 송신 (10ms 안에 응답 하지 않으면 연결 끊음)
+		  HAL_UART_Transmit(&huart3, &a, 1, 10); // a�??��?�� ?��?��?�� 1바이?���? UART 3�? 채널�? ?��?�� (10ms ?��?�� ?��?�� ?���? ?��?���? ?���? ?��?��)
 	  }
     /* USER CODE END WHILE */
 
@@ -131,8 +131,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 25;
-  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
